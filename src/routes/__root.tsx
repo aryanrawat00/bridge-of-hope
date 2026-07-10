@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "HopeBridge Foundation — Building Bridges of Hope" },
+      { name: "description", content: "HopeBridge Foundation empowers communities through education, healthcare, women empowerment and sustainability programs." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "HopeBridge Foundation — Building Bridges of Hope" },
+      { property: "og:description", content: "HopeBridge Foundation empowers communities through education, healthcare, women empowerment and sustainability programs." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "HopeBridge Foundation — Building Bridges of Hope" },
+      { name: "twitter:description", content: "HopeBridge Foundation empowers communities through education, healthcare, women empowerment and sustainability programs." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7789bb8c-d68b-4bd5-8a3b-9be4de12f965" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7789bb8c-d68b-4bd5-8a3b-9be4de12f965" },
     ],
     links: [
       {

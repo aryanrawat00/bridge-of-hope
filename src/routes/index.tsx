@@ -9,10 +9,10 @@ export const Route = createFileRoute("/")({
         content:
           "HopeBridge Foundation empowers communities through education, healthcare, women empowerment and sustainability programs.",
       },
-      { property: "og:title", content: "HopeBridge Foundation" },
+      { property: "og:title", content: "HopeBridge Foundation — Building Bridges of Hope" },
       {
         property: "og:description",
-        content: "A nonprofit building bridges of hope across communities.",
+        content: "HopeBridge Foundation empowers communities through education, healthcare, women empowerment and sustainability programs.",
       },
     ],
   }),
