@@ -621,6 +621,8 @@ p{margin:0 0 1em; color:var(--text-soft)}
   display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
   animation:slideUp .5s var(--ease);
 }
+#cookie-banner[hidden]{display:none !important}
+[hidden]{display:none !important}
 #cookie-banner p{margin:0; font-size:.9rem}
 .cookie-actions{display:flex; gap:8px}
 @keyframes slideUp{from{opacity:0; transform:translateY(20px)}to{opacity:1; transform:translateY(0)}}
@@ -908,4 +910,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   #navbar, #footer, .fab, .back-top, #scroll-progress, #loader, #cookie-banner, .modal, .hero-bg{ display:none !important }
   .section{ padding:20px 0; page-break-inside:avoid }
   a{ color:#000; text-decoration:underline }
+}
+/* ---------- Toast notifications ---------- */
+#hb-toast{
+  position:fixed; left:50%; bottom:28px; transform:translate(-50%, 40px);
+  max-width:min(92vw, 460px);
+  background:linear-gradient(135deg, var(--primary), var(--primary-dark, #0d5c56));
+  color:#fff; padding:14px 20px; border-radius:14px;
+  font-size:.95rem; font-weight:600; line-height:1.4;
+  box-shadow:0 20px 50px -20px rgba(15,118,110,.55), 0 8px 24px rgba(0,0,0,.15);
+  opacity:0; pointer-events:none; z-index:200;
+  transition:opacity .35s var(--ease, ease), transform .45s cubic-bezier(.22,.61,.36,1);
+  text-align:center;
+}
+#hb-toast.show{opacity:1; transform:translate(-50%, 0)}
+@media (max-width:640px){
+  #hb-toast{left:12px; right:12px; bottom:16px; transform:translateY(40px); max-width:none}
+  #hb-toast.show{transform:translateY(0)}
 }

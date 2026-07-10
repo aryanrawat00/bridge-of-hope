@@ -230,4 +230,47 @@
     blobs.forEach((b, i) => b.style.transform = `translateY(${y * (0.05 + i * 0.03)}px)`);
   }, { passive: true });
 
+  /* ---------- Donation flow (simulated) ---------- */
+  const donateBtn = document.querySelector(".donate-cta .btn");
+  if (donateBtn) {
+    donateBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const picked = document.querySelector('input[name="donation"]:checked');
+      let amount = picked?.value || "1500";
+      if (amount === "custom") {
+        const custom = document.querySelector('.donate-card input[type="number"]');
+        if (!custom?.value || +custom.value < 100) {
+          custom?.focus();
+          custom?.reportValidity?.();
+          return;
+        }
+        amount = custom.value;
+      }
+      const original = donateBtn.textContent;
+      donateBtn.disabled = true;
+      donateBtn.textContent = "Processing…";
+      setTimeout(() => {
+        donateBtn.disabled = false;
+        donateBtn.textContent = original;
+        showToast(`🎉 Thank you! Your ₹${(+amount).toLocaleString("en-IN")} donation was successful. A receipt has been emailed to you.`);
+      }, 900);
+    });
+  }
+
+  /* ---------- Toast (accessible) ---------- */
+  function showToast(message) {
+    let host = document.getElementById("hb-toast");
+    if (!host) {
+      host = document.createElement("div");
+      host.id = "hb-toast";
+      host.setAttribute("role", "status");
+      host.setAttribute("aria-live", "polite");
+      document.body.appendChild(host);
+    }
+    host.textContent = message;
+    host.classList.add("show");
+    clearTimeout(host._t);
+    host._t = setTimeout(() => host.classList.remove("show"), 4200);
+  }
+
 })();
