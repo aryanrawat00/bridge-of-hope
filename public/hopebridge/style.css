@@ -621,6 +621,8 @@ p{margin:0 0 1em; color:var(--text-soft)}
   display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
   animation:slideUp .5s var(--ease);
 }
+#cookie-banner[hidden]{display:none !important}
+[hidden]{display:none !important}
 #cookie-banner p{margin:0; font-size:.9rem}
 .cookie-actions{display:flex; gap:8px}
 @keyframes slideUp{from{opacity:0; transform:translateY(20px)}to{opacity:1; transform:translateY(0)}}
