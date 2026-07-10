@@ -2,7 +2,7 @@
 
 A premium, production-ready NGO website built with pure **HTML, CSS, and JavaScript** — no frameworks, no build step. Created as part of an AI Website Generation internship task, developed with the assistance of **Lovable AI**.
 
-> Live site source: [`public/hopebridge/`](./public/hopebridge)
+> Live site source: https://bridgeofhopes.lovable.app
 
 ---
 
