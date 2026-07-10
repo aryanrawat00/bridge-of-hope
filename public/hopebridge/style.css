@@ -721,3 +721,191 @@ p{margin:0 0 1em; color:var(--text-soft)}
   .chip-2{right:10px; bottom:20px}
   #cookie-banner{flex-direction:column; text-align:center}
 }
+
+/* =========================================================
+   PREMIUM POLISH LAYER (v2)
+   Agency-grade refinements: typography, spacing, motion,
+   color consistency, a11y, mobile, cards, CTAs.
+   ========================================================= */
+
+:root{
+  --container: 1240px;
+  --radius: 20px;
+  --radius-lg: 28px;
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --shadow-ring: 0 0 0 1px color-mix(in oklab, var(--text) 6%, transparent);
+  --shadow-soft: 0 1px 2px rgba(10,20,30,.04), 0 8px 24px -12px rgba(10,20,30,.10);
+  --shadow-hover: 0 2px 4px rgba(10,20,30,.06), 0 24px 48px -18px rgba(10,20,30,.22);
+  --grad-primary: linear-gradient(135deg, #0f766e 0%, #14b8a6 55%, #f59e0b 100%);
+  --section-y: clamp(72px, 9vw, 128px);
+}
+[data-theme="dark"]{
+  --shadow-soft: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px -14px rgba(0,0,0,.55);
+  --shadow-hover: 0 2px 4px rgba(0,0,0,.5), 0 24px 48px -18px rgba(0,0,0,.7);
+  --shadow-ring: 0 0 0 1px rgba(255,255,255,.08);
+}
+
+/* Skip link */
+.skip-link{
+  position:fixed; top:-100px; left:16px; z-index:9999;
+  padding:12px 18px; border-radius:12px;
+  background:var(--text); color:var(--bg);
+  font-weight:600; font-size:.9rem;
+  transition:top .25s var(--ease-out);
+}
+.skip-link:focus{top:16px; outline:3px solid var(--accent); outline-offset:2px}
+
+/* Typography refinements */
+body{ font-feature-settings:"ss01","cv11","kern"; letter-spacing:-.005em }
+h1,h2,h3,h4,h5{ letter-spacing:-.025em; text-wrap:balance }
+h1{ font-size:clamp(2.6rem, 5.6vw, 4.6rem); line-height:1.05 }
+h2{ font-size:clamp(2.1rem, 3.8vw, 3.2rem); line-height:1.1 }
+h3{ font-size:clamp(1.35rem, 2.2vw, 1.7rem) }
+p{ text-wrap:pretty }
+.lead{ font-size:clamp(1.05rem, 1.5vw, 1.2rem); line-height:1.65; color:var(--text-soft) }
+
+/* Consistent section rhythm */
+.section{ padding:var(--section-y) 0 }
+.section-head{ margin-bottom:clamp(40px, 6vw, 72px) }
+
+/* Cards: unified elevation & hover */
+.program-card,.why-card,.story-card,.team-card,.event-card,.mvv-card,.donate-card,.form-card,.slide,.faq details{
+  box-shadow:var(--shadow-soft);
+  transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out), border-color .3s;
+}
+.program-card:hover,.why-card:hover,.story-card:hover,.team-card:hover,.event-card:hover,.donate-card:hover{
+  box-shadow:var(--shadow-hover);
+}
+.program-card{ padding:16px 16px 22px; border-radius:22px }
+.program-card h3{ padding:0 4px }
+.program-card p{ padding:0 4px }
+.pc-img{ aspect-ratio:5/4; border-radius:16px }
+.pc-img::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 60%, rgba(0,0,0,.25) 100%);
+  opacity:0; transition:opacity .35s;
+}
+.program-card:hover .pc-img::after{ opacity:1 }
+.pc-tag{ margin:14px 4px 8px }
+
+/* Buttons: crisper, weightier, better focus */
+.btn{
+  padding:13px 24px; font-weight:600; letter-spacing:.005em;
+  min-height:44px; /* a11y tap target */
+  transition:transform .2s var(--ease-out), box-shadow .3s var(--ease-out), background .3s, color .3s, border-color .3s;
+}
+.btn-lg{ padding:17px 30px; font-size:1.02rem; min-height:52px }
+.btn-primary{ background:var(--grad-primary); background-size:200% 100% }
+.btn-primary:hover{ background-position:100% 0; transform:translateY(-2px) }
+.btn-primary:active{ transform:translateY(0) }
+.btn-outline{ border-width:1.5px }
+.btn:focus-visible{ outline:3px solid color-mix(in oklab, var(--primary) 55%, transparent); outline-offset:3px }
+
+/* Nav polish */
+#navbar{ transition:background .3s, box-shadow .3s, border-color .3s }
+#navbar.scrolled{ background:color-mix(in oklab, var(--bg) 92%, transparent) }
+.nav-links a{ position:relative }
+.nav-links a.active::after{
+  content:""; position:absolute; left:14px; right:14px; bottom:2px; height:2px;
+  background:var(--grad-primary); border-radius:2px;
+}
+
+/* Hero refinements */
+.hero{ padding:clamp(48px, 7vw, 96px) 0 clamp(80px, 10vw, 140px) }
+.hero-copy .lead{ margin-top:20px }
+.hero-stats strong{ font-size:clamp(1.6rem, 2.5vw, 2.1rem); background:var(--grad-primary); -webkit-background-clip:text; background-clip:text; color:transparent }
+.hero-card{ border-radius:28px; box-shadow:var(--shadow-hover) }
+.hero-card img{ transition:transform .8s var(--ease-out) }
+.hero-card:hover img{ transform:scale(1.04) }
+.floating-chip{ border-radius:16px; padding:12px 16px; box-shadow:0 12px 32px -12px rgba(10,20,30,.25) }
+.eyebrow{ padding:7px 16px; font-size:.78rem }
+
+/* Icons alignment */
+.why-icon,.mvv-icon{ box-shadow:var(--shadow-ring) }
+.why-icon{ width:56px; height:56px; border-radius:16px }
+
+/* Impact section: better contrast */
+.impact-item{ padding:32px 22px; border-radius:20px; background:rgba(255,255,255,.12) }
+.impact-item strong{ font-size:clamp(2rem, 3.4vw, 2.8rem) }
+.impact-item span{ font-size:.9rem; opacity:.95 }
+
+/* Gallery: better ratio & hover */
+.gallery{ gap:16px; grid-auto-rows:200px }
+.gallery img{ border-radius:18px; box-shadow:var(--shadow-soft) }
+
+/* Forms: better spacing & focus ring */
+.form-card{ padding:36px; border-radius:24px }
+.form-card label{ margin-bottom:16px; font-size:.82rem }
+.form-card input, .form-card select, .form-card textarea{
+  padding:13px 15px; border-radius:12px; font-size:.95rem;
+  min-height:46px;
+}
+.form-card textarea{ min-height:100px; resize:vertical }
+
+/* Donate cards */
+.donate-card{ padding:32px 22px; border-radius:22px }
+.donate-card:has(input:checked){ transform:translateY(-2px) }
+
+/* Testimonials */
+.slide{ padding:48px clamp(28px,5vw,56px); border-radius:24px }
+.slide p{ font-size:clamp(1.15rem, 2vw, 1.5rem); line-height:1.5 }
+
+/* Footer polish */
+#footer{ padding:88px 0 24px; background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%) }
+#footer h5{ font-size:.78rem; letter-spacing:.14em; color:var(--text); opacity:.9 }
+#footer ul a{ transition:color .2s, transform .2s; display:inline-block }
+#footer ul a:hover{ color:var(--primary); transform:translateX(2px) }
+.footer-about{ line-height:1.7 }
+.footer-bottom{ margin-top:60px; padding-top:24px; font-size:.82rem }
+
+/* Scroll progress: taller & smoother */
+#scroll-progress{ height:3px; box-shadow:0 0 12px color-mix(in oklab, var(--primary) 40%, transparent) }
+
+/* Reveal: subtler, snappier */
+.reveal{ transform:translateY(24px); transition-duration:.7s }
+
+/* Focus rings everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible{
+  outline:3px solid color-mix(in oklab, var(--primary) 55%, transparent);
+  outline-offset:2px; border-radius:8px;
+}
+
+/* Selection color */
+::selection{ background:color-mix(in oklab, var(--primary) 30%, transparent); color:var(--text) }
+
+/* Mobile refinements */
+@media (max-width: 900px){
+  .hero{ padding-top:32px; padding-bottom:64px }
+  .hero-visual{ height:auto; aspect-ratio:4/5; max-width:520px; margin:0 auto }
+  .hero-card{ position:relative; inset:auto; height:100% }
+  .hero-stats{ gap:24px }
+  .chip-1, .chip-2{ display:none } /* keep hero clean on mobile */
+  .timeline{ padding:24px }
+  .fab{ width:52px; height:52px; right:16px; bottom:80px }
+  .back-top{ right:16px; bottom:16px }
+}
+@media (max-width: 640px){
+  :root{ --container: 100% }
+  .container{ padding:0 20px }
+  .nav{ gap:12px }
+  .brand-text small{ display:none }
+  .btn-lg{ padding:15px 24px; font-size:.95rem; min-height:48px }
+  .hero-cta{ gap:10px }
+  .hero-cta .btn{ flex:1 1 auto }
+  .form-card{ padding:24px }
+  .slide{ padding:32px 22px }
+  .slide p{ font-size:1.1rem }
+  .impact-item{ padding:24px 16px }
+  .impact-item strong{ font-size:1.8rem }
+  .team-card img{ width:100px; height:100px }
+  .gallery{ grid-auto-rows:140px; gap:10px }
+  .floating-chip{ display:none }
+  #footer{ padding:60px 0 20px }
+}
+
+/* Print */
+@media print{
+  #navbar, #footer, .fab, .back-top, #scroll-progress, #loader, #cookie-banner, .modal, .hero-bg{ display:none !important }
+  .section{ padding:20px 0; page-break-inside:avoid }
+  a{ color:#000; text-decoration:underline }
+}
