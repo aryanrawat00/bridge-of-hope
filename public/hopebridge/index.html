@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f766e" />
+  <title>HopeBridge Foundation — Together We Build Better Futures</title>
+  <meta name="description" content="HopeBridge Foundation is a nonprofit working on education, child welfare, women empowerment, digital literacy, healthcare and sustainability. Join us to build better futures." />
+  <meta name="keywords" content="NGO, nonprofit, education, women empowerment, digital literacy, healthcare, sustainability, donate, volunteer" />
+  <meta name="author" content="HopeBridge Foundation" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="HopeBridge Foundation — Together We Build Better Futures" />
+  <meta property="og:description" content="Nonprofit working on education, child welfare, women empowerment and sustainability." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80" />
+  <meta property="og:url" content="/hopebridge/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HopeBridge Foundation" />
+  <meta name="twitter:description" content="Together We Build Better Futures." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@0.454.0/font/lucide.css" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "HopeBridge Foundation",
+    "url": "https://hopebridge.example.org",
+    "logo": "assets/favicon.svg",
+    "description": "Nonprofit working on education, child welfare, women empowerment, digital literacy, healthcare and sustainability.",
+    "sameAs": [
+      "https://twitter.com/hopebridge",
+      "https://facebook.com/hopebridge",
+      "https://instagram.com/hopebridge",
+      "https://linkedin.com/company/hopebridge"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-logo">
+      <svg viewBox="0 0 48 48" width="56" height="56" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg1" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#14b8a6"/>
+            <stop offset="1" stop-color="#f59e0b"/>
+          </linearGradient>
+        </defs>
+        <path d="M8 32c6-10 10-14 16-14s10 4 16 14" stroke="url(#lg1)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="24" cy="14" r="4" fill="url(#lg1)"/>
+      </svg>
+    </div>
+    <p>HopeBridge</p>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" hidden>
+    <p>We use cookies to enhance your experience. By continuing you agree to our <a href="#privacy">Privacy Policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost" id="cookie-decline">Decline</button>
+      <button class="btn btn-primary" id="cookie-accept">Accept</button>
+    </div>
+  </div>
+
+  <!-- Newsletter popup -->
+  <div id="newsletter-modal" class="modal" role="dialog" aria-labelledby="nl-title" aria-hidden="true">
+    <div class="modal-card glass">
+      <button class="modal-close" aria-label="Close newsletter popup" data-close>&times;</button>
+      <div class="modal-illustration">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="55" fill="url(#lg1)" opacity=".15"/>
+          <path d="M25 45h70v45a5 5 0 0 1-5 5H30a5 5 0 0 1-5-5z" fill="#fff" stroke="#0f766e" stroke-width="2"/>
+          <path d="M25 45l35 25 35-25" fill="none" stroke="#0f766e" stroke-width="2"/>
+        </svg>
+      </div>
+      <h3 id="nl-title">Join our mission</h3>
+      <p>Get monthly stories, program updates and volunteer opportunities.</p>
+      <form class="nl-form" data-newsletter>
+        <input type="email" required placeholder="you@example.com" aria-label="Email address" />
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header id="navbar" role="banner">
+    <nav class="nav container" aria-label="Primary">
+      <a href="#home" class="brand" aria-label="HopeBridge Foundation home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="36" height="36">
+            <defs>
+              <linearGradient id="lg2" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#14b8a6"/>
+                <stop offset="1" stop-color="#f59e0b"/>
+              </linearGradient>
+            </defs>
+            <path d="M8 32c6-10 10-14 16-14s10 4 16 14" stroke="url(#lg2)" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="24" cy="14" r="4" fill="url(#lg2)"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>HopeBridge</strong>
+          <small>Foundation</small>
+        </span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#testimonials">Stories</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">
+          <i class="icon-sun" aria-hidden="true">☀</i>
+        </button>
+        <a href="#donate" class="btn btn-primary btn-donate">
+          <span>Donate</span>
+          <i aria-hidden="true">♥</i>
+        </a>
+        <button id="hamburger" class="icon-btn hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b3"></div>
+        <svg class="hero-illu" viewBox="0 0 600 600" aria-hidden="true">
+          <defs>
+            <linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+          </defs>
+          <circle cx="300" cy="300" r="220" fill="url(#hg)" opacity=".08"/>
+          <circle cx="300" cy="300" r="160" fill="url(#hg)" opacity=".12"/>
+        </svg>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">
+            <span class="dot"></span> Registered nonprofit • Est. 2011
+          </span>
+          <h1>
+            Building bridges of <span class="grad-text">hope</span> for
+            <span id="typewriter" aria-live="polite"></span>
+          </h1>
+          <p class="lead">
+            HopeBridge Foundation empowers communities through education, healthcare,
+            skill development and sustainability — one child, one family, one village at a time.
+          </p>
+          <div class="hero-cta">
+            <a href="#donate" class="btn btn-primary btn-lg ripple">Donate Now →</a>
+            <a href="#volunteer" class="btn btn-outline btn-lg">Become a Volunteer</a>
+          </div>
+
+          <div class="hero-stats">
+            <div><strong data-counter="52000">0</strong><span>Children educated</span></div>
+            <div><strong data-counter="8400">0</strong><span>Volunteers</span></div>
+            <div><strong data-counter="126">0</strong><span>Villages reached</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-card glass float">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80" alt="Children smiling at a HopeBridge learning center" />
+            <div class="hero-card-badge">
+              <div class="avatars">
+                <img loading="lazy" src="https://i.pravatar.cc/40?img=12" alt=""><img loading="lazy" src="https://i.pravatar.cc/40?img=32" alt=""><img loading="lazy" src="https://i.pravatar.cc/40?img=47" alt="">
+              </div>
+              <div>
+                <strong>+8,400 volunteers</strong>
+                <small>changing lives across India</small>
+              </div>
+            </div>
+          </div>
+          <div class="floating-chip chip-1 glass"><i>🎓</i> 200+ scholarships this year</div>
+          <div class="floating-chip chip-2 glass"><i>🌱</i> 45,000 trees planted</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust" aria-label="Partners">
+      <div class="container">
+        <p>Trusted by partners & funders</p>
+        <div class="trust-logos">
+          <span>UNESCO</span><span>UNICEF</span><span>WHO</span><span>Tata Trusts</span><span>Infosys Foundation</span><span>Rotary</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="reveal">
+          <span class="eyebrow">About HopeBridge</span>
+          <h2>A decade of turning empathy into action.</h2>
+          <p class="lead">Founded in 2011 by a group of educators and social workers, HopeBridge has grown into a nationwide movement — reaching under-served communities with dignity, data and design.</p>
+
+          <div class="mvv">
+            <div class="mvv-card glass">
+              <span class="mvv-icon" style="background:#ecfdf5;color:#0f766e">◎</span>
+              <h4>Our Mission</h4>
+              <p>To create equal access to education, healthcare and opportunity for every child and family.</p>
+            </div>
+            <div class="mvv-card glass">
+              <span class="mvv-icon" style="background:#fff7ed;color:#c2410c">✧</span>
+              <h4>Our Vision</h4>
+              <p>A world where circumstance never limits a person's potential to thrive.</p>
+            </div>
+            <div class="mvv-card glass">
+              <span class="mvv-icon" style="background:#eff6ff;color:#1d4ed8">♥</span>
+              <h4>Our Values</h4>
+              <p>Empathy, integrity, transparency, courage and community-first design.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline reveal" aria-label="Our journey">
+          <h3>Our journey</h3>
+          <ol>
+            <li><span>2011</span><p>Founded with a single classroom in Pune.</p></li>
+            <li><span>2014</span><p>Launched women's skill-development centers across 5 states.</p></li>
+            <li><span>2017</span><p>Reached 10,000 children through mobile learning labs.</p></li>
+            <li><span>2020</span><p>Delivered 1M meals & health kits during the pandemic.</p></li>
+            <li><span>2023</span><p>Planted 45,000 trees with 120 partner schools.</p></li>
+            <li><span>2026</span><p>Now serving 126 villages and growing.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="section alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">What we do</span>
+          <h2>Programs designed for lasting impact</h2>
+          <p>Eight interconnected programs that meet communities where they are.</p>
+        </header>
+
+        <div class="programs-grid">
+          <!-- cards inserted here -->
+          <article class="program-card reveal" data-program>
+            <div class="pc-img"><img loading="lazy" alt="Children in classroom" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80"/></div>
+            <span class="pc-tag" style="--tag:#0f766e">Education</span>
+            <h3>Quality Education</h3>
+            <p>After-school programs, scholarships and teacher training for under-resourced schools.</p>
+            <a class="link-arrow" href="#">Learn more →</a>
+          </article>
+          <article class="program-card reveal" data-program>
+            <div class="pc-img"><img loading="lazy" alt="Laptop learning" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80"/></div>
+            <span class="pc-tag" style="--tag:#1d4ed8">Digital</span>
+            <h3>Digital Literacy</h3>
+            <p>Bridging the digital divide with community computer labs and free online courses.</p>
+            <a class="link-arrow" href="#">Learn more →</a>
+          </article>
+          <article class="program-card reveal" data-program>
+            <div class="pc-img"><img loading="lazy" alt="Women learning together" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80"/></div>
+            <span class="pc-tag" style="--tag:#be185d">Empowerment</span>
+            <h3>Women Empowerment</h3>
+            <p>Micro-enterprise, mentorship and legal literacy for 4,000+ women annually.</p>
+            <a class="link-arrow" href="#">Learn more →</a>
+          </article>
+          <article class="program-card reveal" data-program>
+            <div class="pc-img"><img loading="lazy" alt="Doctor with patient" src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=80"/></div>
+            <span class="pc-tag" style="--tag:#dc2626">Health</span>
+            <h3>Healthcare Awareness</h3>
+            <p>Free health camps, maternal-care outreach and mental-wellness workshops.</p>
+            <a class="link-arrow" href="#">Learn more →</a>
+          </article>
+          <article class="program-card reveal" data-program>
+            <div class="pc-img"><img loading="lazy" alt="Planting saplings" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=600&q=80"/></div>
+            <span class="pc-tag" style="--tag:#166534">Environment</span>
+            <h3>Environmental Sustainability</h3>
+            <p>Tree plantations, watershed revival and eco-clubs in 120 schools.</p>
+            <a class="link-arrow" href="#">Learn more →</a>
+          </article>
+          <article class="program-card reveal" data-program>
+            <div class="pc-img"><img loading="lazy" alt="Young people learning skills" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80"/></div>
+            <span class="pc-tag" style="--tag:#c2410c">Skills</span>
+            <h3>Youth Skill Development</h3>
+            <p>Vocational training and job placement for first-generation earners.</p>
+            <a class="link-arrow" href="#">Learn more →</a>
+          </article>
+          <article class="program-card reveal" data-program>
+            <div class="pc-img"><img loading="lazy" alt="Community volunteers" src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80"/></div>
+            <span class="pc-tag" style="--tag:#7c3aed">Community</span>
+            <h3>Community Development</h3>
+            <p>Village-led infrastructure, sanitation and water-access initiatives.</p>
+            <a class="link-arrow" href="#">Learn more →</a>
+          </article>
+          <article class="program-card reveal" data-program>
+            <div class="pc-img"><img loading="lazy" alt="Child welfare" src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=600&q=80"/></div>
+            <span class="pc-tag" style="--tag:#0891b2">Child Welfare</span>
+            <h3>Child Welfare</h3>
+            <p>Nutrition, safe-shelter and mental-health programs for vulnerable children.</p>
+            <a class="link-arrow" href="#">Learn more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Why choose us</span>
+          <h2>Transparent. Measurable. Community-led.</h2>
+        </header>
+
+        <div class="why-grid">
+          <div class="why-card reveal"><span class="why-icon">🛡</span><h4>92¢ to the mission</h4><p>Only 8% overhead — verified by independent auditors annually.</p></div>
+          <div class="why-card reveal"><span class="why-icon">📊</span><h4>Data-first impact</h4><p>Every program measured against clear, published KPIs.</p></div>
+          <div class="why-card reveal"><span class="why-icon">🤝</span><h4>Local partnerships</h4><p>Co-designed with village councils, schools and self-help groups.</p></div>
+          <div class="why-card reveal"><span class="why-icon">🌍</span><h4>Nationwide reach</h4><p>Active in 12 states with a network of 40+ partner NGOs.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT COUNTERS -->
+    <section id="impact" class="section impact-section">
+      <div class="container">
+        <header class="section-head reveal light">
+          <span class="eyebrow light">Our impact</span>
+          <h2>Numbers that carry names.</h2>
+          <p>Behind every number is a child, a mother, a village transformed.</p>
+        </header>
+        <div class="impact-grid">
+          <div class="impact-item reveal"><strong data-counter="52000">0</strong><span>Children educated</span></div>
+          <div class="impact-item reveal"><strong data-counter="8400">0</strong><span>Active volunteers</span></div>
+          <div class="impact-item reveal"><strong data-counter="45000">0</strong><span>Trees planted</span></div>
+          <div class="impact-item reveal"><strong data-counter="12000">0</strong><span>Families supported</span></div>
+          <div class="impact-item reveal"><strong data-counter="320">0</strong><span>Projects completed</span></div>
+          <div class="impact-item reveal"><strong data-counter="126">0</strong><span>Villages reached</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUCCESS STORIES -->
+    <section id="stories" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Success stories</span>
+          <h2>Real lives. Real transformation.</h2>
+        </header>
+        <div class="stories-grid">
+          <article class="story-card reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80" alt="Meera in her classroom"/>
+            <div class="story-body">
+              <h4>Meera, 14 — Nashik</h4>
+              <p>"HopeBridge's scholarship made me the first girl in my family to attend high school."</p>
+            </div>
+          </article>
+          <article class="story-card reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=600&q=80" alt="Radha with her tailoring business"/>
+            <div class="story-body">
+              <h4>Radha, 32 — Jaipur</h4>
+              <p>"I now run a tailoring business that employs six women from my village."</p>
+            </div>
+          </article>
+          <article class="story-card reveal">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&q=80" alt="Arjun coding on his laptop"/>
+            <div class="story-body">
+              <h4>Arjun, 19 — Bhopal</h4>
+              <p>"Their coding bootcamp helped me land my first job as a junior developer."</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Gallery</span>
+          <h2>Moments from the field</h2>
+        </header>
+        <div class="gallery">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80" alt="Books stacked in classroom"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80" alt="Children reading together"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1526976668912-1e036f7be0d3?w=800&q=80" alt="Community meeting"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" alt="Children smiling"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=80" alt="Volunteer teaching"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80" alt="Tree plantation drive"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1503676382389-4809596d5290?w=800&q=80" alt="Girl in library"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80" alt="Reading circle"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTEER -->
+    <section id="volunteer" class="section volunteer-section">
+      <div class="container volunteer-grid">
+        <div class="reveal">
+          <span class="eyebrow">Volunteer with us</span>
+          <h2>Give what you can — time, skills or heart.</h2>
+          <p class="lead">Join a community of 8,400+ volunteers changing lives every week. Whether you can spare an hour or a summer, there's a role for you.</p>
+          <ul class="benefits">
+            <li>✓ Flexible schedules — remote or on-ground</li>
+            <li>✓ Skill-based volunteering (design, code, teaching, medicine)</li>
+            <li>✓ Verified certificates & LinkedIn recommendations</li>
+            <li>✓ Field trips and volunteer retreats</li>
+          </ul>
+        </div>
+
+        <form class="glass form-card reveal" data-form>
+          <h3>Register as a volunteer</h3>
+          <div class="row">
+            <label>Full name <input type="text" required minlength="2" name="name"/></label>
+            <label>Email <input type="email" required name="email"/></label>
+          </div>
+          <div class="row">
+            <label>Phone <input type="tel" required pattern="[0-9+ ]{7,15}" name="phone"/></label>
+            <label>City <input type="text" required name="city"/></label>
+          </div>
+          <label>Area of interest
+            <select name="area" required>
+              <option value="">Choose one…</option>
+              <option>Education</option><option>Healthcare</option><option>Environment</option>
+              <option>Digital Literacy</option><option>Women Empowerment</option>
+            </select>
+          </label>
+          <label>Why do you want to volunteer?
+            <textarea rows="3" name="message" required></textarea>
+          </label>
+          <button class="btn btn-primary ripple" type="submit">Submit Application</button>
+          <p class="form-success" hidden>🎉 Thank you! Our team will reach out within 48 hours.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <section id="donate" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Donate</span>
+          <h2>Your gift becomes their possibility.</h2>
+          <p>Choose an amount — every rupee is transparently tracked to a program.</p>
+        </header>
+
+        <div class="donate-grid">
+          <label class="donate-card reveal">
+            <input type="radio" name="donation" value="500"/>
+            <span class="d-amount">₹500</span>
+            <span class="d-impact">School supplies for 1 child, 1 month</span>
+          </label>
+          <label class="donate-card reveal popular">
+            <span class="popular-tag">Most chosen</span>
+            <input type="radio" name="donation" value="1500" checked/>
+            <span class="d-amount">₹1,500</span>
+            <span class="d-impact">Full scholarship for 1 term</span>
+          </label>
+          <label class="donate-card reveal">
+            <input type="radio" name="donation" value="5000"/>
+            <span class="d-amount">₹5,000</span>
+            <span class="d-impact">A women's micro-enterprise starter kit</span>
+          </label>
+          <label class="donate-card reveal">
+            <input type="radio" name="donation" value="custom"/>
+            <span class="d-amount">Custom</span>
+            <span class="d-impact"><input type="number" min="100" placeholder="Enter ₹" aria-label="Custom donation amount"/></span>
+          </label>
+        </div>
+
+        <div class="donate-cta reveal">
+          <button class="btn btn-primary btn-lg ripple">Donate Securely →</button>
+          <p class="secure-note">🔒 256-bit SSL encrypted • 80G tax exempt • UPI, cards & netbanking</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="section alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Events</span>
+          <h2>Upcoming & past events</h2>
+        </header>
+
+        <div class="events-timeline">
+          <article class="event-card reveal upcoming">
+            <div class="event-date"><span>15</span><small>Aug</small></div>
+            <div>
+              <h4>Independence Day Book Drive</h4>
+              <p>Collect and distribute 10,000 books across 40 rural schools.</p>
+              <span class="event-meta">🗓 Aug 15, 2026 · 🏷 Nationwide</span>
+            </div>
+            <span class="event-badge">Upcoming</span>
+          </article>
+          <article class="event-card reveal upcoming">
+            <div class="event-date"><span>22</span><small>Sep</small></div>
+            <div>
+              <h4>Women's Skill Expo</h4>
+              <p>Showcasing products made by 300+ women entrepreneurs.</p>
+              <span class="event-meta">🗓 Sep 22, 2026 · 🏷 Mumbai</span>
+            </div>
+            <span class="event-badge">Upcoming</span>
+          </article>
+          <article class="event-card reveal past">
+            <div class="event-date"><span>05</span><small>Jun</small></div>
+            <div>
+              <h4>World Environment Day</h4>
+              <p>Planted 5,200 saplings with 60 partner schools.</p>
+              <span class="event-meta">🗓 Jun 5, 2026 · 🏷 12 states</span>
+            </div>
+            <span class="event-badge past">Past</span>
+          </article>
+          <article class="event-card reveal past">
+            <div class="event-date"><span>08</span><small>Mar</small></div>
+            <div>
+              <h4>International Women's Day Summit</h4>
+              <p>1,200 women, 40 speakers, 1 movement.</p>
+              <span class="event-meta">🗓 Mar 8, 2026 · 🏷 Delhi</span>
+            </div>
+            <span class="event-badge past">Past</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Our team</span>
+          <h2>People behind the promise</h2>
+        </header>
+        <div class="team-grid">
+          <article class="team-card reveal">
+            <img loading="lazy" src="https://i.pravatar.cc/300?img=48" alt="Ananya Rao"/>
+            <h4>Ananya Rao</h4><p>Founder & CEO</p>
+          </article>
+          <article class="team-card reveal">
+            <img loading="lazy" src="https://i.pravatar.cc/300?img=15" alt="Vikram Shah"/>
+            <h4>Vikram Shah</h4><p>Executive Director</p>
+          </article>
+          <article class="team-card reveal">
+            <img loading="lazy" src="https://i.pravatar.cc/300?img=32" alt="Priya Menon"/>
+            <h4>Priya Menon</h4><p>Head of Programs</p>
+          </article>
+          <article class="team-card reveal">
+            <img loading="lazy" src="https://i.pravatar.cc/300?img=11" alt="Rahul Iyer"/>
+            <h4>Rahul Iyer</h4><p>Volunteer Lead</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Testimonials</span>
+          <h2>Voices from our community</h2>
+        </header>
+
+        <div class="slider" data-slider>
+          <div class="slides">
+            <blockquote class="slide">
+              <p>"HopeBridge doesn't just help — they listen. That's what makes them different."</p>
+              <footer><img src="https://i.pravatar.cc/80?img=5" alt=""/><cite>Dr. Kavita Sharma<br><small>Partner, Rural Health Initiative</small></cite></footer>
+            </blockquote>
+            <blockquote class="slide">
+              <p>"Volunteering with HopeBridge was the most meaningful year of my life."</p>
+              <footer><img src="https://i.pravatar.cc/80?img=25" alt=""/><cite>Rohan Deshpande<br><small>Volunteer, 2024</small></cite></footer>
+            </blockquote>
+            <blockquote class="slide">
+              <p>"Their transparency is unmatched — every rupee is traceable to impact."</p>
+              <footer><img src="https://i.pravatar.cc/80?img=41" alt=""/><cite>Meera Nair<br><small>Donor since 2018</small></cite></footer>
+            </blockquote>
+          </div>
+          <div class="slider-controls">
+            <button class="icon-btn" data-prev aria-label="Previous testimonial">‹</button>
+            <div class="dots" aria-hidden="true"></div>
+            <button class="icon-btn" data-next aria-label="Next testimonial">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container faq-wrap">
+        <header class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions, answered.</h2>
+        </header>
+        <div class="faq">
+          <details class="reveal"><summary>Are donations tax exempt?<span>+</span></summary><p>Yes — HopeBridge is 80G certified. You will receive a tax-exempt receipt within 24 hours.</p></details>
+          <details class="reveal"><summary>How is my money used?<span>+</span></summary><p>92% goes directly to program delivery. Annual audits are published on our Impact page.</p></details>
+          <details class="reveal"><summary>Can I volunteer remotely?<span>+</span></summary><p>Absolutely. We have digital-tutoring, mentoring, design and translation roles that are fully remote.</p></details>
+          <details class="reveal"><summary>Do you accept corporate CSR partnerships?<span>+</span></summary><p>Yes. We partner with 40+ corporates on CSR-compliant initiatives. Write to partnerships@hopebridge.org.</p></details>
+          <details class="reveal"><summary>How do you measure impact?<span>+</span></summary><p>Every program has quarterly KPIs and independent third-party evaluations.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <span class="eyebrow">Contact us</span>
+          <h2>We'd love to hear from you.</h2>
+          <p class="lead">Whether it's a partnership, a story or just a hello — reach out.</p>
+
+          <ul class="contact-info">
+            <li><span>📍</span> 42 Hope Street, Pune, Maharashtra 411001</li>
+            <li><span>📞</span> +91 98765 43210</li>
+            <li><span>✉️</span> hello@hopebridge.org</li>
+          </ul>
+
+          <div class="socials">
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">◉</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+
+          <div class="map glass" aria-label="Location map">
+            <div class="map-inner">
+              <span>🗺 Google Maps placeholder</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="glass form-card reveal" data-form>
+          <h3>Send us a message</h3>
+          <label>Name <input type="text" required name="name" minlength="2"/></label>
+          <label>Email <input type="email" required name="email"/></label>
+          <label>Subject <input type="text" required name="subject"/></label>
+          <label>Message <textarea rows="4" required name="message"></textarea></label>
+          <button class="btn btn-primary ripple" type="submit">Send Message</button>
+          <p class="form-success" hidden>✅ Message sent! We'll get back within 2 business days.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#home" class="brand">
+          <span class="brand-mark">
+            <svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+              <path d="M8 32c6-10 10-14 16-14s10 4 16 14" stroke="#14b8a6" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <circle cx="24" cy="14" r="4" fill="#f59e0b"/>
+            </svg>
+          </span>
+          <span class="brand-text"><strong>HopeBridge</strong><small>Foundation</small></span>
+        </a>
+        <p class="footer-about">Together we build better futures — one child, one family, one village at a time.</p>
+        <div class="socials small">
+          <a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◉</a><a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul><li><a href="#about">About</a></li><li><a href="#programs">Programs</a></li><li><a href="#impact">Impact</a></li><li><a href="#events">Events</a></li></ul>
+      </div>
+      <div>
+        <h5>Programs</h5>
+        <ul><li><a href="#programs">Education</a></li><li><a href="#programs">Healthcare</a></li><li><a href="#programs">Environment</a></li><li><a href="#programs">Empowerment</a></li></ul>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <ul><li><a href="#">Annual Report</a></li><li><a href="#">Press</a></li><li><a href="#">Careers</a></li><li><a href="#">Blog</a></li></ul>
+      </div>
+      <div class="newsletter">
+        <h5>Newsletter</h5>
+        <p>Monthly stories & updates. No spam.</p>
+        <form data-newsletter>
+          <input type="email" required placeholder="you@example.com" aria-label="Email address"/>
+          <button class="btn btn-primary" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© <span id="year"></span> HopeBridge Foundation. All rights reserved.</p>
+      <ul><li><a href="#" id="privacy">Privacy Policy</a></li><li><a href="#">Terms</a></li><li><a href="#">Cookies</a></li></ul>
+    </div>
+  </footer>
+
+  <!-- Floating action + back to top -->
+  <a href="#donate" class="fab" aria-label="Quick donate">♥</a>
+  <button id="back-top" class="back-top" aria-label="Back to top">↑</button>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-label="Image viewer" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img alt=""/>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
