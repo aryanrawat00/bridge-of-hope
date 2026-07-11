@@ -120,8 +120,13 @@
   /* ---------- Testimonials slider ---------- */
   const slider = $("[data-slider]");
   if (slider) {
-    const track = $(".slides", slider);
-    const slides = $$(".slide", slider);
+    const viewport = $(".slides", slider);
+    const slides = $$(".slide", viewport);
+    // Wrap the slides in an inner track so the transform doesn't move the clip window.
+    const track = document.createElement("div");
+    track.className = "slides-track";
+    slides.forEach(s => track.appendChild(s));
+    viewport.appendChild(track);
     const dotsWrap = $(".dots", slider);
     let idx = 0, timer;
 
