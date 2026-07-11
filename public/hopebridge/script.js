@@ -127,6 +127,8 @@
 
     track.style.display = "flex";
     track.style.transition = "transform .6s cubic-bezier(.22,.61,.36,1)";
+    track.style.width = (slides.length * 100) + "%";
+    slides.forEach(s => { s.style.width = (100 / slides.length) + "%"; s.style.flex = "0 0 " + (100 / slides.length) + "%"; });
     slides.forEach((s, i) => {
       const b = document.createElement("button");
       b.setAttribute("aria-label", `Go to testimonial ${i + 1}`);
@@ -137,7 +139,7 @@
 
     const go = (i) => {
       idx = (i + slides.length) % slides.length;
-      track.style.transform = `translateX(${-idx * 100}%)`;
+      track.style.transform = `translateX(${-idx * (100 / slides.length)}%)`;
       dots.forEach((d, k) => d.classList.toggle("active", k === idx));
       restart();
     };
