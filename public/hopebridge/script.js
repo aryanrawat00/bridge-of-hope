@@ -120,13 +120,23 @@
   /* ---------- Testimonials slider ---------- */
   const slider = $("[data-slider]");
   if (slider) {
-    const track = $(".slides", slider);
-    const slides = $$(".slide", slider);
+    const viewport = $(".slides", slider);
+    const slides = $$(".slide", viewport);
+    // Wrap the slides in an inner track so the transform doesn't move the clip window.
+    const track = document.createElement("div");
+    track.className = "slides-track";
+    slides.forEach(s => track.appendChild(s));
+    viewport.appendChild(track);
     const dotsWrap = $(".dots", slider);
     let idx = 0, timer;
 
     track.style.display = "flex";
     track.style.transition = "transform .6s cubic-bezier(.22,.61,.36,1)";
+    slides.forEach(s => {
+      s.style.minWidth = "100%";
+      s.style.width = "100%";
+      s.style.flex = "0 0 100%";
+    });
     slides.forEach((s, i) => {
       const b = document.createElement("button");
       b.setAttribute("aria-label", `Go to testimonial ${i + 1}`);
@@ -137,7 +147,7 @@
 
     const go = (i) => {
       idx = (i + slides.length) % slides.length;
-      track.style.transform = `translateX(${-idx * 100}%)`;
+      track.style.transform = `translateX(-${idx * 100}%)`;
       dots.forEach((d, k) => d.classList.toggle("active", k === idx));
       restart();
     };
